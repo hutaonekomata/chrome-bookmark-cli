@@ -1,4 +1,7 @@
-import Terminal, { ColorMode, TerminalOutput } from '@hk-pg/react-terminal-ui';
+import Terminal, {
+  ColorMode,
+  TerminalOutput,
+} from '@chrome-bookmark-cli/react-terminal-ui';
 import { useState } from 'react';
 
 export const TerminalUi = (props = {}) => {
