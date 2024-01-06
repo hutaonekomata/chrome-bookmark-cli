@@ -4,7 +4,30 @@ import Terminal, {
 } from '@chrome-bookmark-cli/react-terminal-ui';
 import { useState } from 'react';
 
+let test:string;
+
+function onGot(bookmarkItems:any) {
+  if (bookmarkItems.length) {
+    console.log("active tab is bookmarked");
+  } else {
+    console.log("active tab is not bookmarked");
+  }
+  test = bookmarkItems.length;
+}
+
+
+function getID(terminalInput:string){
+  console.log(`response: '${terminalInput}'`);
+  chrome.bookmarks.search({}, onGot);
+  return(
+    <>
+     {test} 
+    </>
+  );
+}
+
 export const TerminalUi = (props = {}) => {
+
   console.log(props);
 
   const [terminalLineData, setTerminalLineData] = useState([
@@ -26,7 +49,7 @@ export const TerminalUi = (props = {}) => {
             ...terminalLineData,
             <TerminalOutput>
               <a target='_blank' href='https://github.com'>
-                hutaonekomata
+                {getID(terminalInput)}
               </a>
             </TerminalOutput>,
             <TerminalOutput>
