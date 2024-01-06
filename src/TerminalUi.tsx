@@ -26,7 +26,7 @@ export const TerminalUi = (props = {}) => {
             ...terminalLineData,
             <TerminalOutput>
               <a target='_blank' href='https://github.com'>
-                github
+                hutaonekomata
               </a>
             </TerminalOutput>,
             <TerminalOutput>
